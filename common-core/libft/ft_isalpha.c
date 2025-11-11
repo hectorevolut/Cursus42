@@ -6,7 +6,7 @@
 /*   By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 12:10:32 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/10 14:57:24 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/11 14:09:11 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	unsigned char	ch;
-
-	ch = (unsigned char) c;
-	if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 17:59:36 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/10 18:02:21 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/11 14:07:15 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	unsigned char	ch;
-
-	ch = (unsigned char) c;
-	if (ch >= 32 && ch <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

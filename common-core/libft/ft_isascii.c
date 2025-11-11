@@ -6,7 +6,7 @@
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:06:13 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/10 16:08:39 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/11 10:17:53 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	unsigned char	ch;
-
-	ch = (unsigned char) c;
-	if (ch >= 0 && ch <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

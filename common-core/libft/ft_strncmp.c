@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 10:04:16 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/11 14:17:40 by hecalder         ###   ########.fr       */
+/*   Created: 2025/11/11 10:05:50 by hecalder          #+#    #+#             */
+/*   Updated: 2025/11/11 13:55:04 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ************************************************************************** */
 /*																			  */
 /*														  :::	   ::::::::   */
-/*	 ft_strchr.c										:+:		 :+:	:+:   */
+/*	 ft_strncmp.c										:+:		 :+:	:+:   */
 /*													  +:+ +:+		  +:+	  */
-/*	 By: hecalder <hector@student.42malaga.com>		+#+  +:+	   +#+		  */
+/*	 By: hecalder <hecalder@student.42malaga.com>	+#+  +:+	   +#+		  */
 /*												  +#+#+#+#+#+	+#+			  */
-/*	 Created: 2025/11/10 18:42:05 by hecalder		   #+#	  #+#			  */
-/*	 Updated: 2025/11/10 23:25:48 by hecalder		  ###	########.fr		  */
+/*	 Created: 2025/11/11 07:36:00 by hecalder		   #+#	  #+#			  */
+/*	 Updated: 2025/11/11 09:49:59 by hecalder		  ###	########.fr		  */
 /*																			  */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s)
-	{
-		if (*s == (unsigned char)c)
-			return ((char *)s);
-		s++;
-	}
-	if ((unsigned char)c == '\0')
-		return ((char *)s);
-	return (NULL);
+	size_t	i;
+
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

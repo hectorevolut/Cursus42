@@ -6,16 +6,13 @@
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:23:48 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/10 15:31:22 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/11 14:06:08 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	unsigned char	ch;
-
-	ch = (unsigned char) c;
-	if (ch >= '0' && ch <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
