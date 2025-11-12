@@ -1,47 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 10:00:13 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/12 07:51:14 by hecalder         ###   ########.fr       */
+/*   Created: 2025/11/11 16:32:06 by hecalder          #+#    #+#             */
+/*   Updated: 2025/11/11 18:02:30 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ************************************************************************** */
 /*																			  */
 /*														  :::	   ::::::::   */
-/*	 libft.h											:+:		 :+:	:+:   */
+/*	 ft_atoi.c											:+:		 :+:	:+:   */
 /*													  +:+ +:+		  +:+	  */
 /*	 By: hecalder <hecalder@student.42malaga.com>	+#+  +:+	   +#+		  */
 /*												  +#+#+#+#+#+	+#+			  */
-/*	 Created: 2025/11/10 12:02:03 by hecalder		   #+#	  #+#			  */
-/*	 Updated: 2025/11/11 09:57:54 by hecalder		  ###	########.fr		  */
+/*	 Created: 2025/11/11 16:02:11 by hecalder		   #+#	  #+#			  */
+/*	 Updated: 2025/11/11 16:02:47 by hecalder		  ###	########.fr		  */
 /*																			  */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+static int	ft_isspace(char chr)
+{
+	if (chr == ' ' || chr == '\f' || chr == '\n' || chr == '\r')
+		return (1);
+	else if (chr == '\t' || chr == '\v')
+		return (1);
+	else
+		return (0);
+}
 
-# include <stdlib.h>
+int	ft_atoi(const char *str)
+{
+	int	sign;
+	int	result;
+	int	asigned;
 
-int		ft_isalpha(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strrchr(const char *s, int c);
-int		ft_atoi(const char *str);
-void	*ft_memset(void *s, int c, size_t n);
-char	*ft_strdup(const char *s);
-void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *str, size_t n);
-
-#endif
+	sign = 1;
+	result = 0;
+	asigned = 0;
+	while (ft_isspace(*str))
+		str++;
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str ++;
+		asigned ++;
+		if (asigned > 1)
+			return (0);
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+	return (result * sign);
+}
