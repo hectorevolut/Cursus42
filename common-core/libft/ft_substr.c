@@ -6,12 +6,11 @@
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 21:50:57 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/12 22:13:34 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:30:37 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -20,26 +19,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	s_len = ft_strlen(s);
-	if (len == 0 || len > s_len)
-		return (NULL);
-	substr = malloc(len * sizeof(char));
+	if (len == 0 || start > s_len)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	substr = malloc((len + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
 	i = 0;
-	while (s[i])
+	while (s[i] && i < len)
 	{
 		substr[i] = s[i + start];
 		i ++;
 	}
 	substr[i] = '\0';
 	return (substr);
-}
-
-int	main(void)
-{
-	char	str[] = "Hola Héctor";;
-	char *substr = ft_substr(str, 5, 6);
-
-	printf("%s", substr);
-	return (0);
 }
