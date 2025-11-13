@@ -6,7 +6,7 @@
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:00:13 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/13 15:30:11 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:47:34 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_substr(char const *s, unsigned intstart, size_t len);
+char	*ft_strjoin(const char *s1, const char *s2);
 
 #endif
