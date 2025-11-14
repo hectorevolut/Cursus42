@@ -6,7 +6,7 @@
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:00:13 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/13 18:50:29 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/14 07:05:26 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ char	*ft_substr(char const *s, unsigned intstart, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
