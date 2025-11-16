@@ -6,49 +6,46 @@
 /*   By: hecalder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 14:12:22 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/16 16:27:18 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/16 20:33:38 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	in_set(char c, const char *set) {
+#include "libft.h"
+#include <stdlib.h>
+
+static int	in_set(char c, const char *set)
+{
 	while (*set)
 		if (c == *set++)
-			return 1;
-	return 0;
+			return (1);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*end;
 	char	*trim;
-	char	*result_trim;
+	size_t	len;
 
-	end = (char *)s1 + (ft_strlen(s1) - 1);
-	while (*set)
-	{
-		while (in_set(*s1, set))
-			s1 ++;
-		while (in_set(*end, set))
-			end --;
-		set ++;
-	}
-	trim = malloc((end - s1 + 2) * sizeof(char));
-	if (trim == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	result_trim = trim;
-	while (s1 <= end)
-	{
-		*trim = *s1;
-		trim ++;
-		s1 ++;
-	}
-	*trim = '\0';
-	return (result_trim);
+	while (*s1 && in_set(*s1, set))
+		s1++;
+	end = (char *)s1 + ft_strlen(s1);
+	while (end > s1 && in_set(*(end - 1), set))
+		end--;
+	len = end - s1;
+	trim = (char *)malloc(len + 1);
+	if (!trim)
+		return (NULL);
+	ft_memcpy(trim, s1, len);
+	trim[len] = '\0';
+	return (trim);
 }
-
+/*
 int	main(void)
 {
 	char *s1 = "    Hola que tal ";
@@ -57,7 +54,7 @@ int	main(void)
 	printf("%zu", ft_strlen(trim));
 	return (0);
 }
-
+*/
 /*
  * s1: String que debe ser recortada.
  * set: Los caracteres a recortar de la string.
