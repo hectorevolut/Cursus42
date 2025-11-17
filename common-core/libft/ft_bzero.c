@@ -14,12 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*chars;
-
-	chars = (unsigned char *) s;
-	while (n--)
-	{
-		*chars = 0;
-		chars ++;
-	}
+	ft_memset(s, 0, n);
 }
