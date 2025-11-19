@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:00:13 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/17 18:10:23 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/19 16:52:30 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+
+typedef struct	s_list
+{
+void			*content;
+struct s_list	*next;
+}				t_list;
 
 int		ft_isalpha(int c);
 int		ft_toupper(int c);
@@ -61,5 +67,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+t_list	*ft_lstnew(void *content);
 
 #endif

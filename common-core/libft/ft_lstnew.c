@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 18:27:16 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/13 18:40:53 by hecalder         ###   ########.fr       */
+/*   Created: 2025/11/19 16:21:35 by hecalder          #+#    #+#             */
+/*   Updated: 2025/11/19 16:36:03 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	write ((unsigned int)fd, &c, 1);
+	t_list	*newNode;
+
+	newNode = malloc(sizeof(t_list));
+	if (!newNode)
+		return (NULL);
+	newNode->content = content;
+	newNode->next = NULL;
+	return (newNode);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+         #
+#    By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 13:25:31 by hecalder          #+#    #+#              #
-#    Updated: 2025/11/17 18:09:26 by hecalder         ###   ########.fr        #
+#    Updated: 2025/11/19 16:42:40 by hecalder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,11 @@ SRC = ft_isalpha.c ft_toupper.c ft_tolower.c ft_isdigit.c ft_isalnum.c ft_isasci
 	  ft_bzero.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_calloc.c ft_substr.c \
 	  ft_strjoin.c ft_putchar_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putnbr_fd.c \
 	  ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c
+
+BONUS = ft_lstnew.c
+
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS:.c=.o)
 
 #Output library
 NAME = libft.a
@@ -30,18 +34,20 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ)
-
 	ar -rcs $(NAME) $(OBJ)
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
