@@ -6,7 +6,7 @@
 #    By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 13:25:31 by hecalder          #+#    #+#              #
-#    Updated: 2025/11/19 16:42:40 by hecalder         ###   ########.fr        #
+#    Updated: 2025/11/24 11:17:57 by hecalder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC = ft_isalpha.c ft_toupper.c ft_tolower.c ft_isdigit.c ft_isalnum.c ft_isasci
 	  ft_strjoin.c ft_putchar_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putnbr_fd.c \
 	  ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c
 
-BONUS = ft_lstnew.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c
 
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS:.c=.o)
