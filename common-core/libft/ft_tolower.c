@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:12:46 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/11 14:04:42 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:20:47 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

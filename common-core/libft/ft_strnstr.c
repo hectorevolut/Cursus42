@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:51:32 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/12 18:31:24 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:19:56 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 

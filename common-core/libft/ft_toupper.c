@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42nalaga.com    +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:54:59 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/11 14:02:03 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:21:04 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 16:08:06 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/24 09:10:18 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:17:54 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 t_list	*ft_lstlast(t_list *lst)

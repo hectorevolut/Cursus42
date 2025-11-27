@@ -6,7 +6,7 @@
 /*   By: hecalder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 16:27:13 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/17 16:28:57 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:31:19 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-static char	*next_word(const char **s, char c)
+static char	*next_word(char **s, char c)
 {
 	const char	*start;
 	size_t		len;
@@ -63,7 +63,7 @@ static void	free_split(char **split, size_t n)
 	free(split);
 }
 
-static char	**fill_sp(char **split, const char *tr, char c, size_t wrd)
+static char	**fill_sp(char **split, char *tr, char c, size_t wrd)
 {
 	size_t	i;
 	char	*copy;

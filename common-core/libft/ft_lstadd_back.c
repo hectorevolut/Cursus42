@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:20:18 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/24 10:58:38 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:17:26 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 void	ft_lstadd_back(t_list **lst, t_list *new)

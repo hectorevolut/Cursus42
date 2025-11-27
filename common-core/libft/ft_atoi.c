@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:32:06 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/11 18:02:30 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:16:41 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 /*	 Updated: 2025/11/11 16:02:47 by hecalder		  ###	########.fr		  */
 /*																			  */
 /* ************************************************************************** */
+
+#include "stdlib.h"
 
 static int	ft_isspace(char chr)
 {

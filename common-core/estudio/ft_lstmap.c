@@ -6,7 +6,7 @@
 /*   By: hecalder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 08:59:20 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/27 15:01:20 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 21:11:56 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		}
 }
 
-void	ft__print_toupper(char *str)
+void	ft_print_toupper(char *str)
 {
 	char *temp;
 
@@ -151,9 +151,27 @@ void	ft__print_toupper(char *str)
 	while (*temp)
 	{
 		if (*temp >= 'a' && *temp <= 'z')
-			*temp += 32;
+			*temp -= 32;
 		write(1, temp, 1);
+		temp ++;
 	}
+	write(1, " ", 1);
+}
+
+void	*ft_modifica_str(void *str)
+{
+	char	*modificada;
+	char	*temp;
+
+	modificada = ft_strdup(str);
+	temp = modificada;
+	while (*modificada)
+	{
+		if (*modificada >= 'a' && *modificada <= 'z')
+			*modificada -= 32;
+		modificada ++;
+	}
+	return ((void *)temp);
 }
 
 int	main(void)
@@ -177,10 +195,10 @@ int	main(void)
 	nodo3 = NULL;
 	printf("Después de borrar el nodo 3\n");
 	ft_printlist(nodo1);
-	printf("Aplicamos función con lstiter...");
-	ft_lstiter(node1, ft_print_toupper);
+	printf("Aplicamos función con lstiter...\n");
+	ft_lstiter(nodo1, (void *)ft_print_toupper);
 	ft_lstclear(&nodo1, free);
 	if (!nodo1)
-		printf("Lista liberada.\n");
+		printf("\nLista liberada.\n");
 	return (0);
 }

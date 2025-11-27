@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 14:12:22 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/17 17:24:26 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:20:23 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-#include "libft.h"
-#include <stdlib.h>
 
 static int	in_set(char c, const char *set)
 {

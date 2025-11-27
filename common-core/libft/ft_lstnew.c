@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hectorevolut <hectorevolut@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:21:35 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/23 14:37:46 by hecalder         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:18:06 by hectorevolu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
