@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   recorrecadena.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hecalder <hecalder@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 18:21:13 by hecalder          #+#    #+#             */
-/*   Updated: 2025/11/30 17:05:22 by hecalder         ###   ########.fr       */
+/*   Created: 2025/11/30 15:05:54 by hecalder          #+#    #+#             */
+/*   Updated: 2025/11/30 15:25:38 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+void	recorre_string(char *str)
 {
-	size_t	length;
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str ++;
+			printf("Se encontró un %% seguido de: %c\n", *str);
+			str ++;
+		}
+		else
+		{
+			write (1, str, 1);
+			write (1, "\n", 1);
+			str ++;
+		}
+	}
+}
 
-	length = 0;
-	while (s[length])
-		length ++;
-	return (length);
+int	main(void)
+{
+	char *str = "Hola %d Mundo %s";
+
+	recorre_string(str);
+	return (0);
 }
