@@ -3,58 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_integer_functions.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: hecalder <hecalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 21:03:04 by hecalder          #+#    #+#             */
-/*   Updated: 2026/02/07 21:03:48 by hecalder         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:26:50 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_count_digits(int n)
+int	ft_count_digits(long n)
 {
-	int		count;
-	long	nb;
+	int	count;
 
-	nb = n;
-	count = (nb <= 0);
-	if (nb < 0)
-		nb = -nb;
-	while (nb)
+	count = 0;
+	if (n <= 0)
+		count++;
+	while (n != 0)
 	{
-		nb /= 10;
+		n /= 10;
 		count++;
 	}
 	return (count);
 }
+
 char	*ft_itoa(int n)
 {
-	char	*itoa;
-	int		len;
+	char	*str;
 	long	nb;
+	int		len;
 
 	nb = n;
-	len = ft_count_digits(n);
-	itoa = malloc(len + 1);
-	if (!itoa)
+	len = ft_count_digits(nb);
+	str = malloc(len + 1);
+	if (!str)
 		return (NULL);
-	itoa[len] = '\0';
+	str[len] = '\0';
 	if (nb < 0)
 	{
-		itoa[0] = '-';
-		nb *= -1;
+		str[0] = '-';
+		nb = -nb;
 	}
-	while (--len >= 0 && itoa[len] != '-')
+	if (nb == 0)
+		str[len - 1] = '0';
+	while (nb > 0)
 	{
-		itoa[len] = (nb % 10) + '0';
+		str[len - 1] = (nb % 10) + '0';
 		nb /= 10;
+		len--;
 	}
-	return (itoa);
+	return (str);
 }
+
 int	ft_count_digits_u(unsigned int n)
 {
-	int		        count;
+	int				count;
 	unsigned long	nb;
 
 	nb = n;
@@ -68,6 +71,7 @@ int	ft_count_digits_u(unsigned int n)
 	}
 	return (count);
 }
+
 char	*ft_utoa(unsigned int n)
 {
 	char			*utoa;
@@ -87,6 +91,7 @@ char	*ft_utoa(unsigned int n)
 	}
 	return (utoa);
 }
+
 char	*ft_utoa_base(unsigned long int n, int base, char *tabla)
 {
 	char			*utoa_base;
@@ -94,14 +99,14 @@ char	*ft_utoa_base(unsigned long int n, int base, char *tabla)
 	unsigned long	nb;
 
 	nb = n;
-    len = 0;
-    if (n == 0)
-        len = 1;
+	len = 0;
+	if (n == 0)
+		len = 1;
 	while (n > 0)
 	{
-        n /= base;
-        len ++;
-    }
+		n /= base;
+		len ++;
+	}
 	utoa_base = malloc(len + 1);
 	if (!utoa_base)
 		return (NULL);

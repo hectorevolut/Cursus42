@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: hecalder <hecalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 20:29:09 by hecalder          #+#    #+#             */
-/*   Updated: 2026/02/05 22:40:21 by hecalder         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:44:27 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_printf(const char *str, ...)
 	va_list		varg;
 	char		selector;
 
+	if (!str)
+		return (-1);
 	va_start (varg, str);
 	bytes = 0;
 	while (*str)

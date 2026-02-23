@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_selection.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: hecalder <hecalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 00:56:58 by hecalder          #+#    #+#             */
-/*   Updated: 2026/02/07 21:01:12 by hecalder         ###   ########.fr       */
+/*   Updated: 2026/02/15 11:03:42 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ int	ft_print_select(char selector, va_list *varg )
 	int	bytes;
 
 	bytes = 0;
-	if (selector == '%' || selector == 'c' || selector == 's')
-		bytes = ft_print_char_str(selector, varg);
+	if (selector == '%' || selector == 'c')
+		bytes = ft_print_char(selector, varg);
+	else if (selector == 's')
+		bytes = ft_print_str(selector, varg);
 	else if (selector == 'd' || selector == 'i' || selector == 'u')
 		bytes = ft_print_numbers(selector, varg);
 	else if (selector == 'x' || selector == 'X')

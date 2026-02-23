@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_auxiliar_functions.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecalder <hecalder@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: hecalder <hecalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 21:15:42 by hecalder          #+#    #+#             */
-/*   Updated: 2026/02/07 21:04:07 by hecalder         ###   ########.fr       */
+/*   Updated: 2026/02/15 12:04:05 by hecalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ size_t	ft_strlen(const char *str)
 		len++;
 	return (len);
 }
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
+
 void	ft_putstr(char *str)
 {
 	int	i;
